@@ -8,7 +8,7 @@ import TableRow from './TableRow.js';
       amountRows - количество строк таблицы на странице
       isPaginated - признак, выполнять ли пагинацию (true/false)
 */
-
+let currentData;
 const TableBody = ({ body, numPage, amountRows, isPaginated }) => {
   // Номера строк, отображаемых на странице (если пагинация включена)
   const begRange = (numPage - 1) * amountRows;
@@ -29,6 +29,7 @@ const TableBody = ({ body, numPage, amountRows, isPaginated }) => {
       <TableRow row={Object.values(item)} isHead="0" />
     </tr>
   ));
+  currentData = tbody
 
   return <tbody>{tbody}</tbody>;
 };

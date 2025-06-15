@@ -102,10 +102,8 @@ form label {
 }
 
 form input {
-  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 200px;
 }
 
 form button {
@@ -124,4 +122,19 @@ form button[type="reset"] {
 
 form button:hover {
   opacity: 0.9;
+}
+
+svg {
+  width: 900px;
+  height: 600px;
+}
+
+svg path, line {
+  fill: none;
+  stroke: black;
+  width: 1px;
+}
+
+svg text {
+  font: 8px Verdana;
 }

@@ -47,6 +47,11 @@ form p {
 }
 
 form label {
+  min-width: 80px;
+  font-weight: 500;
+}
+
+.filter label{
   min-width: 180px;
   font-weight: 500;
 }
@@ -54,10 +59,8 @@ form label {
 form input[type='text'],
 form input[type='number'],
 form select {
-  padding: 6px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 180px;
 }
 
 form button {
@@ -137,6 +140,28 @@ tr.hide {
 
 .pagination span:hover:not(.active) {
   background-color: #f0f0f0;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+svg path, line {
+  fill: none;
+  stroke: black;
+  width: 1px;
+}
+
+svg text {
+  font: 8px Verdana;
+}
+
+.buttons{
+  display: flex;
+}
+.buttons p {
+  margin: 4px
 }
 
 @media (max-width: 768px) {

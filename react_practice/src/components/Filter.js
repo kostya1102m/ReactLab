@@ -58,7 +58,7 @@ const Filter = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} onReset={handleReset}>
+    <form class="filter" onSubmit={handleSubmit} onReset={handleReset}>
       <p>
         <label>Страна:</label>
         <input name="country" type="text" />

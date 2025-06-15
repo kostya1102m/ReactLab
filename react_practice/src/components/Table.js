@@ -3,6 +3,8 @@ import TableHead from './TableHead.js';
 import TableBody from './TableBody.js';
 import Filter from './Filter.js';
 import Sort from './Sort.js';
+import Chart from './Chart.js'
+
 
 /*
    компонент, выводящий на страницу таблицу с пагинацией
@@ -75,6 +77,12 @@ const Table = ({ data, amountRows, isPaginated = true }) => {
           sorting={handleSorting} 
           data={filteredData} 
           fullData={data}
+        />
+      </details>
+      <details>
+        <summary>График</summary>
+        <Chart
+         data={filteredData}
         />
       </details>
       <table>
