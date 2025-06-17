@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useEffect } from "react";
+import Chart from './Chart.js'
 import TableHead from './TableHead.js';
 import TableBody from './TableBody.js';
 import Filter from './Filter.js';
@@ -15,8 +17,17 @@ const Table = ({ data, amountRows, isPaginated = true }) => {
   const [activePage, setActivePage] = useState("1");
   const [dataTable, setDataTable] = useState(data);
 
+  // useEffect(() => {
+
+  //   const pages = Math.ceil(data.length / amountRows).toString();
+  //   setActivePage(pages);
+
+  // }, [data, amountRows]
+  // );
+
   // Количество страниц разбиения таблицы на основе отфильтрованных данных
   const n = Math.ceil(dataTable.length / amountRows);
+  console.log("n:", n)
 
   // Массив с номерами страниц
   const arr = Array.from({ length: n }, (v, i) => i + 1);
@@ -25,6 +36,7 @@ const Table = ({ data, amountRows, isPaginated = true }) => {
   if (+activePage > n && n > 0) {
     setActivePage("1");
   }
+
 
   const changeActive = (event) => {
     setActivePage(event.target.innerHTML); // Меняем activePage
@@ -43,11 +55,13 @@ const Table = ({ data, amountRows, isPaginated = true }) => {
 
   const updateDataTable = (value) => {
     setDataTable(value);
-    setActivePage("1"); // Сбрасываем на первую страницу при фильтрации
+    const last_page = Math.ceil(value.length / amountRows).toString();
+    setActivePage(last_page);
   };
 
   return (
     <>
+      <Chart data={dataTable} /> {}
       <Filter filtering={updateDataTable} data={dataTable} fullData={data} />
       <table>
         <TableHead head={Object.keys(data[0])} />
@@ -58,7 +72,8 @@ const Table = ({ data, amountRows, isPaginated = true }) => {
           isPaginated={isPaginated}
         />
       </table>
-      {isPaginated && n>1 && <div className="pagination">{pages}</div>}
+      {isPaginated && n > 1 && <div className="pagination">{pages}</div>}
+      
     </>
   );
 };

@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="App">
       <h3>Самые высокие здания и сооружения</h3>
-      <Chart data={buildings}/>
       <Table data={buildings} amountRows="15" isPaginated={true} />
     </div>
   );

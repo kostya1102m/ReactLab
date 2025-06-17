@@ -5,7 +5,6 @@
       data - данные для фильтрации
       filtering - функция обновления данных для фильтрации
 */
-
 const Filter = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -73,19 +72,19 @@ const Filter = (props) => {
         <input name="city" type="text" />
       </p>
       <p>
-        <label>Год (мин):</label>
+        <label>Год от:</label>
         <input name="year_min" type="number" />
       </p>
       <p>
-        <label>Год (макс):</label>
+        <label>Год до:</label>
         <input name="year_max" type="number" />
       </p>
       <p>
-        <label>Высота (мин):</label>
+        <label>Высота от:</label>
         <input name="height_min" type="number" />
       </p>
       <p>
-        <label>Высота (макс):</label>
+        <label>Высота до:</label>
         <input name="height_max" type="number" />
       </p>
       <p>

@@ -72,27 +72,27 @@ const Filter = (props) => {
         <input name="incomeSource" type="text" />
       </p>
       <p>
-        <label>Возраст (мин):</label>
+        <label>Возраст от:</label>
         <input name="age_min" type="number" />
       </p>
       <p>
-        <label>Возраст (макс):</label>
+        <label>Возраст до:</label>
         <input name="age_max" type="number" />
       </p>
       <p>
-        <label>Позиция в Forbes (мин):</label>
+        <label>Позиция в Forbes от:</label>
         <input name="position_min" type="number" />
       </p>
       <p>
-        <label>Позиция в Forbes (макс):</label>
+        <label>Позиция в Forbes до:</label>
         <input name="position_max" type="number" />
       </p>
       <p>
-        <label>Стоимость чистых активов (мин):</label>
+        <label>Стоимость чистых активов от:</label>
         <input name="assets_min" type="number" />
       </p>
       <p>
-        <label>Стоимость чистых активов (макс):</label>
+        <label>Стоимость чистых активов до:</label>
         <input name="assets_max" type="number" />
       </p>
       <p>
