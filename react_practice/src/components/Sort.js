@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Sort = ({ fullData, data, sorting }) => {
+const Sort = ({ fullData, data, sorting, resetRef }) => {
   const [levels, setLevels] = useState([
     { column: 0, desc: false },
     { column: 0, desc: false },
@@ -81,15 +81,27 @@ const Sort = ({ fullData, data, sorting }) => {
     sorting(null);
   };
 
-  useEffect(() => {
-    resetSortState(); // сброс при обновлении данных
-  }, [data]);
+  // useEffect(() => {
+  //   resetSortState(); // сброс при обновлении данных
+  // }, [data]);
 
   const handleReset = () => {
     resetSortState(); // сброс по кнопке
   };
 
-  // Компонент для рендеринга уровня
+  useEffect(() => {
+    if (resetRef.current) {
+      setLevels([
+        { column: 0, desc: false },
+        { column: 0, desc: false },
+        { column: 0, desc: false },
+      ]);
+      sorting(null);
+      resetRef.current = false; 
+    } 
+  }, [resetRef, sorting]);
+
+
   const RenderLevel = ({ index, label }) => (
     <p>
       <label>{label}:</label>

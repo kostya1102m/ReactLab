@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 /*
    компонент, для фильтрации таблицы
    пропсы:
@@ -7,6 +8,13 @@
 */
 
 const Filter = (props) => {
+
+  useEffect(() => {
+    if (props.resetRef.current) {
+      props.resetRef.current = false;
+    }
+  }, [props.resetRef]);
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -54,7 +62,7 @@ const Filter = (props) => {
   };
 
   const handleReset = () => {
-    props.filtering(props.fullData);
+    props.onFullReset();
   };
 
   return (
